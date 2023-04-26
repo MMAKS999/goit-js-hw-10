@@ -3,8 +3,8 @@ import Notiflix from 'notiflix';
 
 export const fetchCountries = (name, functionE,clearList ) => {
   fetch(
-    `https://restcountries.com/v3.1/name/${name}`
-    //  `https://restcountries.com/v3.1/name/${name}?fields=capital,population,flag,languages,name.official`
+    // `https://restcountries.com/v3.1/name/${name}`
+    `https://restcountries.com/v3.1/name/${name}?fields=capital,population,flags,languages,name`
   )
     .then(response => {
       if (!response.ok) {
