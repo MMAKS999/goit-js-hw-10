@@ -1,7 +1,7 @@
 import Notiflix from 'notiflix';
 // Функція генерування запиту за назвою країни
 
-export const fetchCountries = (name, functionE) => {
+export const fetchCountries = (name, functionE,clearList ) => {
   fetch(
     `https://restcountries.com/v3.1/name/${name}`
     //  `https://restcountries.com/v3.1/name/${name}?fields=capital,population,flag,languages,name.official`
@@ -17,9 +17,13 @@ export const fetchCountries = (name, functionE) => {
     })
     .catch(error => {
       CountriesNot();
+      clearList();
     });
 };
 
 const CountriesNot = () => {
   Notiflix.Notify.failure('Oops, there is no country with that name');
 };
+
+
+

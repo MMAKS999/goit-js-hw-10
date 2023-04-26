@@ -103,7 +103,7 @@ const handleInputChange = event => {
   console.log(inputEl.value);
   name1 = event.target.value.trim();
   if (name1 !== '') {
-    fetchCountries(name1, selectionCountryFunction);
+    fetchCountries(name1, selectionCountryFunction,clearList);
   } else {
     numberCountriesMore();
     clearList();
